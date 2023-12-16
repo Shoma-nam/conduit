@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//demo.productionready.io/main.css" />
 <div class="editor-page">
   <div class="container page">
     <div class="row">
