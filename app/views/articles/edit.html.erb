@@ -6,6 +6,15 @@
         <ul class="error-messages">
           <li>That title is required</li>
         </ul>
+        
+        <%= form_with(model: @article, local: true) do |form| %>
+          <fieldset class="form-group">
+            <%= form.text_field :title, class: 'form-control', placeholder: 'Article Title' %>
+          </fieldset>
+          <!-- その他のフォームフィールド -->
+          <%= form.submit 'Update Article', class: 'btn btn-primary' %>
+        </fieldset>
+        <% end %>
 
         <form>
           <fieldset>

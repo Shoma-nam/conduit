@@ -21,13 +21,19 @@
             </li>
           </ul>
         </div>
-        <% @articles.each do |todo| %>
-          <tr>
-            <td><%= todo.title %></td>
-          </tr>
+
+        <!-- app/views/home/index.html.erb -->
+        <% @articles.each do |article| %>
+          <div class="article-preview">
+            <a href="/articles/<%= article.id %>" class="preview-link">
+              <h1><%= article.title %></h1>
+              <p><%= truncate(article.content, length: 100) %></p>
+              <span>Read more...</span>
+            </a>
+          </div>
         <% end %>
 
-        <%# <div class="article-preview">
+        <div class="article-preview">
           <div class="article-meta">
             <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
             <div class="info">
@@ -47,7 +53,7 @@
               <li class="tag-default tag-pill tag-outline">implementations</li>
             </ul>
           </a>
-        </div> %>
+        </div>
 
         <%# <div class="article-preview">
           <div class="article-meta">
