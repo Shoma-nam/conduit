@@ -1,3 +1,4 @@
 class Article < ApplicationRecord
-    # モデルのコード
-end
+    belongs_to :user
+  end
+  
