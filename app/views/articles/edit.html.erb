@@ -6,42 +6,25 @@
         <ul class="error-messages">
           <li>That title is required</li>
         </ul>
-        
-        <%= form_with(model: @article, local: true) do |form| %>
-          <fieldset class="form-group">
-            <%= form.text_field :title, class: 'form-control', placeholder: 'Article Title' %>
-          </fieldset>
-          <!-- その他のフォームフィールド -->
-          <%= form.submit 'Update Article', class: 'btn btn-primary' %>
-        </fieldset>
-        <% end %>
 
-        <form>
+        <%= form_with(model: @article, local: true) do |form| %>
           <fieldset>
             <fieldset class="form-group">
-              <input type="text" class="form-control form-control-lg" placeholder="Article Title" />
+              <%= form.text_field :title, class: 'form-control form-control-lg', placeholder: 'Article Title' %>
             </fieldset>
             <fieldset class="form-group">
-              <input type="text" class="form-control" placeholder="What's this article about?" />
+              <%= form.text_field :subtitle, class: 'form-control', placeholder: "What's this article about?" %>
             </fieldset>
             <fieldset class="form-group">
-              <textarea
-                class="form-control"
-                rows="8"
-                placeholder="Write your article (in markdown)"
-              ></textarea>
+              <%= form.text_area :content, class: 'form-control', rows: 8, placeholder: 'Write your article (in markdown)' %>
             </fieldset>
             <fieldset class="form-group">
-              <input type="text" class="form-control" placeholder="Enter tags" />
-              <div class="tag-list">
-                <span class="tag-default tag-pill"> <i class="ion-close-round"></i> tag </span>
-              </div>
+              <%= form.text_field :tags, class: 'form-control', placeholder: 'Enter tags' %>
+              <!-- タグリストは必要に応じて実装 -->
             </fieldset>
-            <button class="btn btn-lg pull-xs-right btn-primary" type="button">
-              Publish Article
-            </button>
+            <%= form.submit 'Publish Article', class: 'btn btn-lg pull-xs-right btn-primary' %>
           </fieldset>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>

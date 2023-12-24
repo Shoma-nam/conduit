@@ -22,9 +22,9 @@
         <%= link_to edit_article_path(@article), class: "btn btn-sm btn-outline-secondary" do %>
           <i class="ion-edit"></i> Edit Article
         <% end %>
-        <button class="btn btn-sm btn-outline-danger">
+        <%= link_to article_path(@article), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" do %>
           <i class="ion-trash-a"></i> Delete Article
-        </button>
+        <% end %>
       </div>
     </div>
   </div>
